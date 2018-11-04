@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
+
 import {
   WEBSITE_NAME,
   ABOUT_US,
@@ -8,7 +10,10 @@ import {
   HOW_TO
 } from "../../constants/header";
 
+import { Button, Icon } from "../";
+
 const Header = () => {
+  const [openNav, setOpenNav] = useState(false);
   const navList = [
     {
       name: PASSENGER,
@@ -32,20 +37,35 @@ const Header = () => {
     }
   ];
 
+  const handleOpenNav = () => setOpenNav(!openNav);
+
   return (
     <header className="Header">
       <nav>
-        <div>
-          <span className="header-name">{WEBSITE_NAME}</span>
+        <div className="Header-left">
+          <span className="header-left-name">{WEBSITE_NAME}</span>
         </div>
-        <div>
-          <ul>
-            {navList.map(({ name, url }) => (
-              <li key={url}>
-                <a href={`#${url}`}>{name}</a>
-              </li>
-            ))}
-          </ul>
+        <div className="Header-right">
+          <div className="dropdown-panel">
+            <Button block onClick={handleOpenNav}>
+              <Icon name={openNav ? "times" : "bars"} size="lg" />
+            </Button>
+          </div>
+          <div
+            className={classNames("nav-list", {
+              "is-open": openNav
+            })}
+          >
+            <ul>
+              {navList.map(({ name, url }) => (
+                <li key={url}>
+                  <a href={`#${url}`} onClick={handleOpenNav}>
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

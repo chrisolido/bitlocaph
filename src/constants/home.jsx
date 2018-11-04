@@ -1,4 +1,4 @@
-const TAG_LINE = "Find a car, anywhere, everywhere!";
+const TAG_LINE = "Anywhere and Everywhere, Bitlocaph takes you there";
 const PAYMENT = "Accepts Payment";
 const PAYMENT_TYPE = [
   { name: "Bitcoin" },

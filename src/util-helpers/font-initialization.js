@@ -4,6 +4,6 @@ import {
   faGooglePlay,
   faAppStore
 } from "@fortawesome/free-brands-svg-icons";
-// import { faGooglePlay } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faGooglePlay, faAppStore);
+library.add(fab, faGooglePlay, faAppStore, faBars, faTimes);
