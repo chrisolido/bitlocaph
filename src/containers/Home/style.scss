@@ -1,0 +1,119 @@
+/* @define Home */
+
+.Home {
+  width: 100%;
+  height: 100%;
+
+  .content {
+    background-image: url("../../src/assets/images/background/bg.png");
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: 50% 20% 30%;
+    background-size: cover;
+    background-position: center center;
+    overflow-x: hidden;
+
+    &-left {
+      padding: 3em 50px 0 50px;
+      background-color: #0b83a7;
+      position: relative;
+      font-size: 2em;
+      color: #fff;
+      display: grid;
+      justify-content: space-between;
+      align-items: center;
+      &-tagline {
+        max-width: 80%;
+      }
+      &-payment {
+        font-size: 24px;
+
+        span {
+          font-size: 18px;
+          margin-bottom: 20px;
+          display: block;
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      &-download {
+        font-size: 18px;
+        &-button {
+          display: grid;
+          grid-row-gap: 10px;
+          width: 200px;
+          margin-top: 30px;
+        }
+      }
+    }
+    &-center {
+      &::after {
+        content: "";
+        transform: skewY(110deg);
+        transform-origin: top left;
+        background: #0b83a7;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        left: 50%;
+      }
+      img {
+        position: absolute;
+        z-index: 3;
+        width: 55%;
+        top: 40%;
+        left: 25%;
+      }
+    }
+    &-right {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 70%;
+        z-index: 4;
+      }
+    }
+
+    @media #{$small-phone}, #{$phone-and-tablets} {
+      grid-template-columns: 100%;
+      padding-top: 100px;
+      height: auto;
+      overflow-y: scroll;
+
+      &-left {
+        order: 2;
+        padding: 3em 50px 3em 50px;
+
+        &-tagline {
+          max-width: 100%;
+          padding-bottom: 50px;
+        }
+
+        &-payment {
+          padding-bottom: 50px;
+        }
+      }
+
+      &-center {
+        display: none;
+      }
+
+      &-right {
+        order: 1;
+        display: flex;
+      }
+    }
+  }
+}
