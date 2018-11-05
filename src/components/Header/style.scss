@@ -1,0 +1,41 @@
+/* @define Header */
+
+.Header {
+  width: 100%;
+  height: 5.71428571429em;
+  background: #fff;
+
+  > nav {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+
+    div {
+      .header-name {
+        padding: 2em;
+        display: block;
+      }
+
+      &:last-child {
+        box-sizing: border-box;
+        display: grid;
+        justify-content: flex-end;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            display: inline;
+            a {
+              padding: 2em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
