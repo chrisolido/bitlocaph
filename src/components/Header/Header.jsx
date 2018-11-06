@@ -11,6 +11,7 @@ import {
 } from "../../constants/header";
 
 import { Button, Icon } from "../";
+import logo from "../../assets/images/app/bitlocaph-icon.png";
 
 const Header = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -43,6 +44,7 @@ const Header = () => {
     <header className="Header">
       <nav>
         <div className="Header-left">
+          <img src={logo} alt="logo" />
           <span className="header-left-name">{WEBSITE_NAME}</span>
         </div>
         <div className="Header-right">
